@@ -1,4 +1,4 @@
-# MERN Stack Project: Build and Deploy a Twitter Clone From Scratch | JWT, Socket.io
+# MERN Stack Project: Buzz - Socail Media Application
 
 Technologies:
 
