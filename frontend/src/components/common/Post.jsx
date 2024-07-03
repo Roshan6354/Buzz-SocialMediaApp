@@ -68,15 +68,18 @@ const Post = ({ post }) => {
 			// toast.success("Post Liked successfully");
 
 			// not a good solution because it will fetch all posts
-			// queryClient.invalidateQueries({queryKey:["posts"]});
-			queryClient.setQueryData(["posts"], (oldData) => {
-				return oldData.map((p) => {
-					if (p._id === post._id) {
-						return { ...p, likes: updatedLikes };
-					}
-					return p;
-				});
-			});
+			queryClient.invalidateQueries({queryKey:["posts"]});
+			// queryClient.setQueryData(["posts"], (oldData) => {
+			// 	return oldData.map((p) => {
+			// 		if (p._id === post._id) {
+			// 			return { ...p, likes: updatedLikes };
+			// 		}
+			// 		return p;
+			// 	});
+			// });
+			 queryClient.setQueryData(['posts'], (oldPosts) =>
+                    oldPosts.map((p) => (p._id === updatedPost._id ? updatedPost : p))
+            );
 		},
 		onError: (error) => {
 			toast.error(error.message);
@@ -112,7 +115,7 @@ const Post = ({ post }) => {
 			// queryClient.setQueryData(["posts"], (oldData) => {
 			// 	return oldData.map((p) => {
 			// 		if (p._id === post._id) {
-			// 			return { ...p, comments: allComments };
+			// 			return { ...p, p: allComments };
 			// 		}
 			// 		return p;
 			// 	});
@@ -253,7 +256,7 @@ const Post = ({ post }) => {
 											{isCommenting ? (
 												<span className='loading loading-spinner loading-md'></span>
 											) : (
-												"Post"
+												"Comment"
 											)}
 										</button>
 									</form>
