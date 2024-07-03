@@ -72,7 +72,7 @@ const CreatePost = () => {
 			<form className='flex flex-col gap-2 w-full' onSubmit={handleSubmit}>
 				<textarea
 					className='textarea w-full p-0 text-lg resize-none border-none focus:outline-none  border-gray-800'
-					placeholder='What is happening?!'
+					placeholder='Post Something'
 					value={text}
 					onChange={(e) => setText(e.target.value)}
 				/>
@@ -95,7 +95,7 @@ const CreatePost = () => {
 							className='fill-primary w-6 h-6 cursor-pointer'
 							onClick={() => imgRef.current.click()}
 						/>
-						<BsEmojiSmileFill className='fill-primary w-5 h-5 cursor-pointer' />
+						{/* <BsEmojiSmileFill className='fill-primary w-5 h-5 cursor-pointer' /> */}
 					</div>
 					<input type='file' accept="image/*" hidden ref={imgRef} onChange={handleImgChange} />
 					<button className='btn btn-primary rounded-full btn-sm text-white px-4'>
