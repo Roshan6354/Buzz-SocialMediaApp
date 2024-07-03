@@ -77,9 +77,9 @@ const Post = ({ post }) => {
 			// 		return p;
 			// 	});
 			// });
-			 queryClient.setQueryData(['posts'], (oldPosts) =>
-                    oldPosts.map((p) => (p._id === updatedPost._id ? updatedPost : p))
-            );
+			//  queryClient.setQueryData(['posts'], (oldPosts) =>
+            //         oldPosts.map((p) => (p._id === updatedPost._id ? updatedPost : p))
+            // );
 		},
 		onError: (error) => {
 			toast.error(error.message);
