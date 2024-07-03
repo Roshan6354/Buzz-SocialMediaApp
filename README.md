@@ -1,5 +1,11 @@
 # MERN Stack Project: Buzz - Socail Media Application
 
+
+
+
+### Deployed Link
+https://buzz-yle3.onrender.com
+
 Technologies:
 
 -  Tech Stack: React.js, MongoDB, Node.js, Express, Tailwind
